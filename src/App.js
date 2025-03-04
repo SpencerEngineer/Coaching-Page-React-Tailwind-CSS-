@@ -6,6 +6,7 @@ import AppFooter from './components/shared/AppFooter';
 import AppHeader from './components/shared/AppHeader';
 import './css/App.css';
 import UseScrollToTop from './hooks/useScrollToTop';
+import logo from './images/logo.webp';
 
 const About = lazy(() => import('./pages/AboutMe'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
@@ -20,6 +21,15 @@ function App() {
 			<div className=" bg-secondary-light dark:bg-primary-dark transition duration-300">
 				<Router>
 					<ScrollToTop />
+
+					<div className='w-full flex justify-center items-center py-4 mt-4'>
+						<img
+							src={logo}
+							className="w-40"
+							alt="Dark Logo"
+						/>
+					</div>
+				
 					<AppHeader />
 					<Suspense fallback={""}>
 						<Routes>
